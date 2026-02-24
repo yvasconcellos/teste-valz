@@ -1,75 +1,121 @@
-# Nuxt Minimal Starter
+# Área do Aluno - Front-end
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Este projeto é uma implementação de uma Área do Aluno, desenvolvida como parte de um teste técnico.
 
-## Setup
+---
 
-Make sure to install dependencies:
+## 1. Contexto
 
+O objetivo deste projeto é permitir que o usuário:
+
+- Visualize seus cursos
+- Acesse detalhes e aulas de cada curso
+- Navegue por conteúdos e materiais complementares
+
+**Observações importantes:**
+
+- Todos os dados são mockados localmente (pasta `data/`)
+---
+
+## 2. Stack Utilizada
+
+- **Framework:** Nuxt 4
+- **CSS:** Tailwind CSS
+- **Gerenciador de pacotes:** npm
+- **Linguagem:** TypeScript
+
+---
+
+## 3. Rodando localmente
+
+### Instalar dependências
 ```bash
-# npm
 npm install
-
-# pnpm
+# ou
 pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
+### Rodar em desenvolvimento
 ```bash
-# npm
 npm run dev
-
-# pnpm
+# ou
 pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
-
-Build the application for production:
-
+### Gerar build estático
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+npm run generate
+# ou
+pnpm generate
 ```
 
-Locally preview production build:
-
+### Visualizar build estático
 ```bash
-# npm
 npm run preview
-
-# pnpm
+# ou
 pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
 ```
+---
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## 4. Scripts disponíveis
+
+```json
+{
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write ."
+  }
+}
+```
+---
+
+## 5. Estrutura do Projeto
+
+```json
+app/
+├─ components/
+│  ├─ auth/
+│  │  ├─ AuthCard.vue
+│  │  ├─ LoginForm.vue
+│  │  └─ RecoverPasswordForm.vue
+│  ├─ lesson/
+│  │  ├─ LessonContent.vue
+│  │  └─ LessonList.vue
+│  ├─ AppHeader.vue
+│  ├─ CourseCard.vue
+│  ├─ ProgressBar.vue
+│  ├─ SkeletonCourseCard.vue
+│  ├─ SkeletonCourseDetail.vue
+│  └─ VideoPlayer.vue
+├─ composables/
+│  ├─ useAuth.ts
+│  ├─ useCourseProgress.ts
+│  └─ useCourses.ts
+├─ data/
+│  ├─ courses.ts
+│  └─ lessons.ts
+├─ layouts/
+│  ├─ auth.vue
+│  └─ default.vue
+├─ middleware/
+│  └─ auth.ts
+├─ pages/
+│  ├─ cursos/
+│  │  ├─ [slug].vue
+│  │  └─ index.vue
+│  ├─ login.vue
+│  ├─ materiais-complementares.vue
+│  └─ meus-cursos.vue
+├─ types/
+│  ├─ Course.ts
+│  └─ Lesson.ts
+└─ utils/
+   ├─ cpf.ts
+   └─ matricula.ts
+   ```
