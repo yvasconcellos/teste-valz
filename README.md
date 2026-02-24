@@ -119,3 +119,12 @@ app/
    ├─ cpf.ts
    └─ matricula.ts
    ```
+---
+
+## Acesso à Tela "Meus Cursos"
+
+> **Observação:** A tela de login é apenas para **visualização**.
+
+- Para acessar, basta inserir qualquer número no campo **Matrícula**.
+- Qualquer valor pode ser usado no campo **Senha**.
+- Não há validação real, então você pode testar livremente a interface.
